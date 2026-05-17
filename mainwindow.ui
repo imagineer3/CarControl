@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>树莓派小车控制上位机</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+        background-color: #f5f7fa;
+}
+QLabel#label_video {
+        background-color: #000000;
+        border: 3px solid #34495e;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #ffffff;
+}
+QPushButton {
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #3498db;
+        color: white;
+        min-width: 100px;
+}
+QPushButton:pressed {
+        background-color: #2980b9;
+}
+QPushButton#btn_connect {
+        background-color: #27ae60;
+        font-weight: bold;
+}
+QPushButton#btn_disconnect {
+        background-color: #e67e22;
+        font-weight: bold;
+}
+QPushButton#btn_stop {
+        background-color: #e74c3c;
+        font-weight: bold;
+        font-size: 15px;
+}
+QGroupBox {
+        font-size: 14px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-top: 5px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label_video">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>10</y>
+      <width>541</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>等待视频连接...</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <property name="fixedSize" stdset="0">
+     <size>
+      <width>480</width>
+      <height>480</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>560</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="btn_disconnect">
+       <property name="text">
+        <string>断开连接</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>390</y>
+      <width>770</width>
+      <height>145</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>小车运动控制</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_forward">
+          <property name="text">
+           <string>前进</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="btn_left">
+          <property name="text">
+           <string>左转</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="btn_stop">
+          <property name="text">
+           <string>停止</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="btn_right">
+          <property name="text">
+           <string>右转</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="btn_backward">
+          <property name="text">
+           <string>后退</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>舵机云台控制</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_servo_up">
+          <property name="text">
+           <string>云台上</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="btn_servo_left">
+          <property name="text">
+           <string>云台左</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="btn_servo_right">
+          <property name="text">
+           <string>云台右</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="btn_servo_down">
+          <property name="text">
+           <string>云台下</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>560</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QPushButton" name="btn_connect">
+       <property name="text">
+        <string>连接小车</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
